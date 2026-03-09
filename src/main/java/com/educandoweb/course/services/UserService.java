@@ -5,6 +5,7 @@ import com.educandoweb.course.repositories.UserRepository;
 import com.educandoweb.course.services.exceptions.DatabaseException;
 import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -28,6 +29,7 @@ public class UserService {
     }
 
     public User insert(User obj) {
+        obj.setPassword(BCrypt.hashpw(obj.getPassword(), BCrypt.gensalt()));
         return repository.save(obj);
     }
 
