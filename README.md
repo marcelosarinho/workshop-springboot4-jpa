@@ -1,20 +1,22 @@
 # Workshop Spring Boot + JPA
 
-Projeto desenvolvido para estudo de **Spring Boot** e **Spring Data JPA**, implementando uma **API RESTful** com persistência de dados em banco relacional utilizando **Hibernate ORM**.
+Projeto desenvolvido para estudo de **Spring Boot 4**, **Spring Data JPA** e **Hibernate**, implementando uma **API RESTful** com persistência de dados em banco relacional.
 
-A aplicação demonstra conceitos importantes de backend Java, como arquitetura em camadas, mapeamento objeto-relacional e relacionamento entre entidades.
+A aplicação utiliza **H2 Database para ambiente de desenvolvimento** e possui suporte a **PostgreSQL**, seguindo uma arquitetura em camadas com **Controllers, Services e Repositories**.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- Maven
-- Banco de dados H2
-- REST API
+- **Java 25**
+- **Spring Boot 4.0.3**
+- **Spring Web MVC** (criação da API REST)
+- **Spring Data JPA** (camada de persistência)
+- **Hibernate ORM** (implementação JPA)
+- **Maven** (gerenciamento de dependências)
+- **H2 Database** (banco em memória para desenvolvimento)
+- **PostgreSQL** (banco relacional para ambiente real)
+- **jBCrypt** (criptografia de senhas)
 
 ---
 
@@ -30,3 +32,18 @@ Neste projeto foram aplicados conceitos essenciais do ecossistema Spring:
 - Serialização JSON com Jackson
 - Configuração de banco de dados em memória
 - Seed inicial de dados para testes
+- Criptografia de senha com **BCrypt**
+
+---
+
+## 🏗 Arquitetura do Projeto
+
+O projeto segue a arquitetura comum em aplicações Spring Boot:
+
+Controller (Resource)\
+↓\
+Service\
+↓\
+Repository\
+↓\
+Database
